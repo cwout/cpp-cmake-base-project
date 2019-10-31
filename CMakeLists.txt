@@ -72,7 +72,33 @@ set(SOURCES_ALL ${SOURCES} ${SOURCES_SHARED} ${SOURCES_EXTERNAL})
 #find_library(LIB_ )
 #find_package(LIB_ )
 
-set(LIBS ) 
+set(LIBS_ANY )
+set(LIBS_UNIX )
+set(LIBS_WIN32 )
+set(LIBS_APPLE )
+set(LIBS_MINGW )
+set(LIBS_MSYS )
+set(LIBS_CYGWIN )
+
+set(LIBS ${LIBS_ANY})
+if (UNIX)
+    set(LIBS ${LIBS} ${LIBS_UNIX})
+endif(UNIX)
+if (WIN32)
+    set(LIBS ${LIBS} ${LIBS_})
+endif(WIN32)
+if (APPLE)
+    set(LIBS ${LIBS} ${LIBS_APPLE})
+endif(APPLE)
+if (MINGW)
+    set(LIBS ${LIBS} ${LIBS_MINGW})
+endif(MINGW)
+if (MSYS)
+    set(LIBS ${LIBS} ${LIBS_MSYS})
+endif(MSYS)
+if (CYGWIN)
+    set(LIBS ${LIBS} ${LIBS_CYGWIN})
+endif(CYGWIN)
 
 
 ##################
@@ -81,5 +107,7 @@ set(LIBS )
 ##              ##
 ##################
 
-add_executable(${PROJECT_NAME} ${SOURCES_ALL})
-target_link_libraries(${PROJECT_NAME} ${LIBS})
+set(NAME_EXE ${PROJECT_NAME})
+
+add_executable(${NAME_EXE} ${SOURCES_ALL})
+target_link_libraries(${NAME_EXE} ${LIBS})
