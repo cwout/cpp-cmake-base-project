@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd "$(dirname "$0")" || exit
+cd ..
 
 # Clean the build directory
 if [[ -d build/ ]]; then
@@ -8,4 +9,4 @@ if [[ -d build/ ]]; then
 fi
 
 # Build the project
-bash build.sh
+bash ./scripts/build.sh

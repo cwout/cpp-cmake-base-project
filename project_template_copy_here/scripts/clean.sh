@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd "$(dirname "$0")" || exit
+cd ..
 
 # Clean build directory
 if [[ -d build/ ]]; then

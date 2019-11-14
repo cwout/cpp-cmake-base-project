@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd "$(dirname "$0")" || exit
+cd ..
 
 # Run directory
 if [[ ! -d run/ ]]; then

@@ -1,9 +1,10 @@
 #!/bin/bash
 
 cd "$(dirname "$0")" || exit
+cd ..
 
 # Pre run
-bash ./pre_run.sh
+bash ./scripts/pre_run.sh
 
 # Run program
 cd run/ || exit
@@ -13,4 +14,4 @@ cd run/ || exit
 
 # Post run
 cd ../
-bash ./post_run.sh
+bash ./scripts/post_run.sh
