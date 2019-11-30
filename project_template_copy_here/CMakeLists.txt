@@ -36,6 +36,35 @@ set(NAME_EXE ${PROJECT_NAME})
 set(DIR_BASE ..)
 
 
+######################
+##                  ##
+##  FIND LIBRARIES  ##
+##                  ##
+######################
+
+#=========================== FIND LIBRARY/PACKAGES BELOW ===========================#
+
+#find_library(LIB_A a)
+#if(LIB_A)
+#	set(LIB_FOUND_A YES)
+#else()
+#	set(LIB_FOUND_A NO)
+#	message(WARNING "Library A not found")
+##	message(FATAL_ERROR "Library A not found")
+#endif()
+
+#find_package(package )
+##find_package(package REQUIRED)
+#if(package_FOUND)
+#	set(PACK_FOUND_package YES)
+#else()
+#	set(PACK_FOUND_package NO)
+#	message(WARNING "Package package not found")
+#endif()
+
+#=========================== FIND LIBRARY/PACKAGES ABOVE ===========================#
+
+
 ###############################
 ##                           ##
 ##  SET DIRECTORY VARIABLES  ##
@@ -103,9 +132,7 @@ set(SOURCES_ALL ${SOURCES} ${SOURCES_SHARED} ${SOURCES_EXTERNAL})
 #################
 
 #=========================== SPECIFY LIBRARIES BELOW ===========================#
-#find_library(LIB_ )
-#find_package(LIB_ )
-
+#=========================== see 'find libraries' secttion for names ===========#
 set(LIBS_ANY )
 set(LIBS_UNIX )
 set(LIBS_WIN32 )
@@ -113,6 +140,7 @@ set(LIBS_APPLE )
 set(LIBS_MINGW )
 set(LIBS_MSYS )
 set(LIBS_CYGWIN )
+#=========================== see 'find libraries' secttion for names ===========#
 #=========================== SPECIFY LIBRARIES ABOVE ===========================#
 
 set(LIBS ${LIBS_ANY})
