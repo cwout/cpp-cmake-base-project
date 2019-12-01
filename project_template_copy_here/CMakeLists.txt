@@ -69,6 +69,19 @@ set(DIR_BASE ..)
 
 ###############################
 ##                           ##
+##  ADD COMPILE DEFINITIONS  ##
+##                           ##
+###############################
+
+#======================== ADD COMPILE DEFINITIONS BELOW ========================#
+
+#add_compile_definitions(DEFINITION)
+
+#======================== ADD COMPILE DEFINITIONS ABOVE ========================#
+
+
+###############################
+##                           ##
 ##  SET DIRECTORY VARIABLES  ##
 ##                           ##
 ###############################
