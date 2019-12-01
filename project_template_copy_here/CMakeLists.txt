@@ -57,8 +57,10 @@ set(DIR_BASE ..)
 ##find_package(package REQUIRED)
 #if(package_FOUND)
 #	set(PACK_FOUND_package YES)
+#	set(LIB_package ${pack_lib})
 #else()
 #	set(PACK_FOUND_package NO)
+#	set(LIB_package )
 #	message(WARNING "Package package not found")
 #endif()
 
@@ -102,6 +104,14 @@ if(ENABLE_EXTERNAL)
 	include_directories(${DIR_EXTERNAL_INCLUDE})
 endif()
 
+#===================== ADD PACKAGE INCLUDE DIRECTORIES BELOW =====================#
+
+#if(PACK_FOUND_package)
+#   include_directories(${package_INCLUDE_DIRS})
+#endif()
+
+#===================== ADD PACKAGE INCLUDE DIRECTORIES ABOVE =====================#
+
 
 #####################
 ##                 ##
@@ -131,8 +141,8 @@ set(SOURCES_ALL ${SOURCES} ${SOURCES_SHARED} ${SOURCES_EXTERNAL})
 ##             ##
 #################
 
-#=========================== SPECIFY LIBRARIES BELOW ===========================#
-#=========================== see 'find libraries' secttion for names ===========#
+#=========================== SPECIFY LIBRARIES BELOW ==========================#
+#=========================== see 'find libraries' section for names ===========#
 set(LIBS_ANY )
 set(LIBS_UNIX )
 set(LIBS_WIN32 )
@@ -140,8 +150,8 @@ set(LIBS_APPLE )
 set(LIBS_MINGW )
 set(LIBS_MSYS )
 set(LIBS_CYGWIN )
-#=========================== see 'find libraries' secttion for names ===========#
-#=========================== SPECIFY LIBRARIES ABOVE ===========================#
+#=========================== see 'find libraries' section for names ===========#
+#=========================== SPECIFY LIBRARIES ABOVE ==========================#
 
 set(LIBS ${LIBS_ANY})
 if (UNIX)
